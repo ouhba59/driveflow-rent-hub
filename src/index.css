@@ -2,41 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* DriveFlow Car Rental Design System */
 
 @layer base {
   :root {
+    /* Core Background & Text */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 24% 16%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 24% 16%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Automotive Primary - Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 100% 85%;
+    --primary-dark: 217 91% 40%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Silver/Metallic Secondary */
+    --secondary: 210 11% 96%;
+    --secondary-foreground: 210 24% 16%;
+    --secondary-dark: 210 11% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Grays */
+    --muted: 210 11% 96%;
+    --muted-foreground: 210 13% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Orange for CTAs */
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 25 95% 85%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning Amber */
+    --warning: 43 96% 56%;
+    --warning-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Destructive Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 217 91% 60%;
+
+    /* Design System Variables */
+    --radius: 0.75rem;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-dark)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.9), hsl(217 91% 40% / 0.9));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(210 24% 16% / 0.05);
+    --shadow-md: 0 4px 6px hsl(210 24% 16% / 0.07), 0 2px 4px hsl(210 24% 16% / 0.06);
+    --shadow-lg: 0 10px 15px hsl(210 24% 16% / 0.1), 0 4px 6px hsl(210 24% 16% / 0.05);
+    --shadow-xl: 0 20px 25px hsl(210 24% 16% / 0.1), 0 10px 10px hsl(210 24% 16% / 0.04);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +90,67 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode Core */
+    --background: 210 30% 8%;
+    --foreground: 210 11% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark Cards */
+    --card: 210 24% 12%;
+    --card-foreground: 210 11% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark Popover */
+    --popover: 210 24% 12%;
+    --popover-foreground: 210 11% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Dark Primary */
+    --primary: 217 100% 70%;
+    --primary-foreground: 210 30% 8%;
+    --primary-light: 217 100% 85%;
+    --primary-dark: 217 91% 50%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Dark Secondary */
+    --secondary: 210 18% 20%;
+    --secondary-foreground: 210 11% 96%;
+    --secondary-dark: 210 18% 15%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Dark Muted */
+    --muted: 210 18% 20%;
+    --muted-foreground: 210 13% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Accent */
+    --accent: 25 95% 65%;
+    --accent-foreground: 210 30% 8%;
+    --accent-light: 25 95% 80%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark Success */
+    --success: 142 76% 45%;
+    --success-foreground: 210 30% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark Warning */
+    --warning: 43 96% 60%;
+    --warning-foreground: 210 30% 8%;
+
+    /* Dark Destructive */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 30% 8%;
+
+    /* Dark Borders */
+    --border: 210 18% 20%;
+    --input: 210 18% 20%;
+    --ring: 217 100% 70%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-dark)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(217 100% 70% / 0.9), hsl(217 91% 50% / 0.9));
+
+    /* Dark Shadows */
+    --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 4px 6px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px hsl(0 0% 0% / 0.15), 0 4px 6px hsl(0 0% 0% / 0.05);
+    --shadow-xl: 0 20px 25px hsl(0 0% 0% / 0.25), 0 10px 10px hsl(0 0% 0% / 0.04);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
